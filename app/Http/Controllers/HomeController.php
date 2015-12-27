@@ -2,14 +2,15 @@
 
 namespace PlatziLaravel\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use PlatziLaravel\Http\Requests;
-use PlatziLaravel\Http\Controllers\Controller;
+use PlatziLaravel\Models\Post;
 
 class HomeController extends Controller {
 
 	public function index(){
-		return view('home');
+		//Eager loading ...
+		$posts = Post::with('author')->get();
+
+		return view('home',['posts'=>$posts]);
 	}
 }

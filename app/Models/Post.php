@@ -8,7 +8,12 @@ use PlatziLaravel\User;
 class Post extends Model {
     protected $fillable = ['title','slug','body','author_id'];
 
-	public function user(){
+	public function author(){
 		return $this->belongsTo(User::class);
 	}
+
+
+	/*public function user(){
+		return $this->belongsTo(User::class, 'author_id');
+	}*/
 }

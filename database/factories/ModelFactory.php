@@ -22,7 +22,7 @@ $factory->define(PlatziLaravel\User::class, function (Faker\Generator $faker) {
 
 $factory->define(\PlatziLaravel\Models\Post::class, function(Faker\Generator $faker){
     return [
-        'title'=>$faker->title,
+        'title'=>$faker->sentence(),
         'body'=>$faker->text,
         'slug'=>$faker->slug,
     ];
