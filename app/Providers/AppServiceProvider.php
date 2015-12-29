@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // echo AppServiceProvider::class." boot()";
     }
 
     /**
@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+	    //$this->app->singleton('alexh', function($app){return new User();});
+	    // echo AppServiceProvider::class." register()";
     }
 }
