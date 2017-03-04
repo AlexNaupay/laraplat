@@ -14,6 +14,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // echo AppServiceProvider::class." boot()";
+        //view()->share('userCurrent',auth()->user());
     }
 
     /**

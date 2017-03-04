@@ -8,9 +8,6 @@ use PlatziLaravel\Models\Post;
 class HomeController extends Controller {
 
 	public function index(){
-		//Eager loading ...
-		$posts = Post::with('author')->get();
-
-		return view('home',['posts'=>$posts]);
+		return redirect()->route('post_index_path');
 	}
 }

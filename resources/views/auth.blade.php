@@ -24,18 +24,7 @@
 						<input id="password" name="password" type="password">
 						<label for="password" class="">clave</label>
 
-						<!-- errors -->
-						@if($errors->has())
-							<div class="red-text text-darken-3 center-align center-block">
-								{{--<i class="mdi-alert-error"></i>--}}
-								<ul class="list-unstyled">
-									@foreach($errors->all() as $error)
-										<li><span>{{ $error }}</span></li>
-									@endforeach
-								</ul>
-							</div>
-						@endif
-						<!-- /errors -->
+						@include('partials.form_errors')
 
 					</div>
 				</div>

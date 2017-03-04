@@ -12,8 +12,12 @@
 </head>
 <body>
 	<nav class="light-blue lighten-1" role="navigation">
-		<div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+		<div class="nav-wrapper container"><a id="logo-container" href="{{ url('/') }}" class="brand-logo">Logo</a>
 			<ul class="right hide-on-med-and-down">
+				<li><span>
+						<strong>{{ !empty($userCurrent)?$userCurrent->password:'' }}</strong>
+					</span>
+				</li>
 				<li><a href="{{ route('auth_destroy_path') }}">Logout</a></li>
 			</ul>
 

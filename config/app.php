@@ -155,6 +155,7 @@ return [
         PlatziLaravel\Providers\AuthServiceProvider::class,
         PlatziLaravel\Providers\EventServiceProvider::class,
         PlatziLaravel\Providers\RouteServiceProvider::class,
+        PlatziLaravel\Providers\ComposerServiceProvider::class,
 
     ],
 
