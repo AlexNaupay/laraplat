@@ -21,7 +21,10 @@
         ],
         "psr-4": {
             "PlatziLaravel\\": "app/"
-        }
+        },
+        "files": [
+            "app/helpser.php"
+        ]
     },
     "autoload-dev": {
         "classmap": [
