@@ -6,6 +6,7 @@ use Illuminate\Contracts\Queue\EntityNotFoundException;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Validator;
 use PlatziLaravel\Http\Requests;
 use PlatziLaravel\Models\Post;
@@ -96,7 +97,12 @@ class PostsController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function edit($id) {
-		$post = Post::findOrFail($id);
+        $post = Post::findOrFail($id);
+    //print_r($post->toArray());
+        if (Gate::denies('update-post', $post)){
+            // You can't edit this post
+            return redirect()->route('post_index_path');
+        }
 		return view('post.post_edit',['post'=>$post]);
 	}
 

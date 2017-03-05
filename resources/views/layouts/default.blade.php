@@ -15,7 +15,8 @@
 		<div class="nav-wrapper container"><a id="logo-container" href="{{ url('/') }}" class="brand-logo">Logo</a>
 			<ul class="right hide-on-med-and-down">
 				<li><span>
-						<strong>{{ !empty($userCurrent)?$userCurrent->password:'' }}</strong>
+						{{--<strong>{{ !empty($userCurrent)?$userCurrent->password:'' }}</strong>--}}
+						<strong>{{ !empty($userCurrent)?'ViewComposer in Action':'' }}</strong>
 					</span>
 				</li>
 				<li><a href="{{ route('auth_destroy_path') }}">Logout</a></li>
