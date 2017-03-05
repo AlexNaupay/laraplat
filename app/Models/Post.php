@@ -16,4 +16,11 @@ class Post extends Model {
 	/*public function user(){
 		return $this->belongsTo(User::class, 'author_id');
 	}*/
+
+	public function scopeSlug($query, $slug){
+	    if (!trim($slug).isEmpty()){
+	        //$query->where('slug',$slug);
+	        $query->where('slug','LIKE',"%$slug%");
+        }
+    }
 }

@@ -32,6 +32,7 @@ class PostsController extends Controller {
 		//Eager loading ...
 		//$posts = Post::with('author')->get();
 		$posts = Post::with('author')->paginate(10);
+		//$posts = Post::slug('slug-search')->with('author')->paginate(10);
         // devAuthor();
 		//$posts = Post::paginate(10);
 
