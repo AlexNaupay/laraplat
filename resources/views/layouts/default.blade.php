@@ -7,7 +7,7 @@
 	<title>Laravel</title>
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+	<link rel="stylesheet" href="{{ asset('dist/app.css') }}">
 	@yield('css')
 </head>
 <body>
@@ -28,7 +28,9 @@
 		</div>
 	</nav>
 
-	@yield('content')
+	<div class="main">
+		@yield('content')
+	</div>
 
 	<footer class="page-footer orange">
 		<div class="container">
@@ -68,7 +70,7 @@
 
 
 	<!--  Scripts-->
-	<script src="{{ asset('js/app.js') }}"></script>
+	<script src="{{ asset('dist/app.js') }}"></script>
 	@yield('js')
 </body>
 </html>
