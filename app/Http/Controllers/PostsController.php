@@ -16,12 +16,8 @@ class PostsController extends Controller {
      */
     public function __construct(){
         // Ejecutar este método antes de ... las funciones only
-        $this->beforeFilter("@commonMethod", ['only'=> ['index','show', 'etc...']]);
     }
 
-    public function commonMethod(){
-        //$this->property = SOMETHING
-    }
 
     /**
 	 * Display a listing of the resource.

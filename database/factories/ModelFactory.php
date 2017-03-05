@@ -15,7 +15,16 @@ $factory->define(PlatziLaravel\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => mb_strtolower($faker->email,'utf8'),
-        'password' => bcrypt('_alexh'),
+        'password' => bcrypt(str_random(16)),
+        'remember_token' => str_random(10),
+    ];
+});
+
+$factory->defineAs(PlatziLaravel\User::class,'alexh' ,function (Faker\Generator $faker) {
+    return [
+        'name' => "Alex",
+        'email' => mb_strtolower("alexnaupay@gmail.com",'utf8'),
+        'password' => bcrypt("alexh"),
         'remember_token' => str_random(10),
     ];
 });
