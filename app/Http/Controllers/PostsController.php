@@ -11,7 +11,19 @@ use PlatziLaravel\Http\Requests;
 use PlatziLaravel\Models\Post;
 
 class PostsController extends Controller {
-	/**
+    /**
+     * PostsController constructor.
+     */
+    public function __construct(){
+        // Ejecutar este método antes de ... las funciones only
+        $this->beforeFilter("@commonMethod", ['only'=> ['index','show', 'etc...']]);
+    }
+
+    public function commonMethod(){
+        //$this->property = SOMETHING
+    }
+
+    /**
 	 * Display a listing of the resource.
 	 *
 	 * @return \Illuminate\Http\Response
