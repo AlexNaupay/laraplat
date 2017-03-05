@@ -3,6 +3,9 @@
 @section('content')
 	<div class="container">
 
+	@if(Session::has('no_permission'))
+				<div class="card-panel red accent-2">{{Session::get('no_permission')}}</div>
+	@endif
 
 		<div style="margin-top:15px;">
 

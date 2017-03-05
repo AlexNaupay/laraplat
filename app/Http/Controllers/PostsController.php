@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use PlatziLaravel\Http\Requests;
 use PlatziLaravel\Models\Post;
@@ -101,6 +102,7 @@ class PostsController extends Controller {
     //print_r($post->toArray());
         if (Gate::denies('update-post', $post)){
             // You can't edit this post
+            Session::flash("no_permission", "You can't edit this post: $post->id");
             return redirect()->route('post_index_path');
         }
 		return view('post.post_edit',['post'=>$post]);
