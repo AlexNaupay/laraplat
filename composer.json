@@ -23,7 +23,7 @@
             "PlatziLaravel\\": "app/"
         },
         "files": [
-            "app/helpser.php"
+            "app/helpers.php"
         ]
     },
     "autoload-dev": {
